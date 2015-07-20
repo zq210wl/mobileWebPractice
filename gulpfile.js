@@ -3,10 +3,11 @@ var gulp = require('gulp'),
     htmlmin = require('gulp-htmlmin'),
     imagemin = require('gulp-imagemin'),
     less = require('gulp-less'),
-    minify-css = require('gulp-minify-css'),
+    minifyCss = require('gulp-minify-css'),
     connect = require('gulp-connect'),
     plumber = require('gulp-plumber');
 
+/* provide a web server and liveload*/
 gulp.task('connect', [], function() {
   connect.server({
     root: 'src',
@@ -16,14 +17,17 @@ gulp.task('connect', [], function() {
 
 gulp.task('html', function () {
   gulp.src('src/**/*.html')
+    // listening the changes to reload server
     .pipe(connect.reload());
 });
 
 gulp.task('less', function () {
   gulp.src('src/less/*.less')
+    // prevent watch task from stopping when error happened
     .pipe(plumber())
     .pipe(less())
     .pipe(gulp.dest('src/css'))
+    // listening the changes to reload server
     .pipe(connect.reload());
 });
 
@@ -32,4 +36,4 @@ gulp.task('watch', function () {
   gulp.watch(['src/less/*.less'], ['less']);
 });
 
-gulp.task('default', ['connect', 'watch']);
+gulp.task('default', ['less', 'connect', 'watch']);

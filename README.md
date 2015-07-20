@@ -1,9 +1,4 @@
 # mobileWebPractice
 Learn to develop mobile websit
 
-# libraries
-* zepto.js
-* handlebars
-* Swiper
-* normalize.css
-*
+_This project is not finished, just did some buliding work. Wait to do._
