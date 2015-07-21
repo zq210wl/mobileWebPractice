@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     htmlmin = require('gulp-htmlmin'),
     imagemin = require('gulp-imagemin'),
-    less = require('gulp-less'),
+    sass = require('gulp-sass'),
     minifyCss = require('gulp-minify-css'),
     connect = require('gulp-connect'),
     plumber = require('gulp-plumber');
@@ -21,11 +21,11 @@ gulp.task('html', function () {
     .pipe(connect.reload());
 });
 
-gulp.task('less', function () {
-  gulp.src('src/less/*.less')
+gulp.task('sass', function () {
+  gulp.src('src/sass/*.scss')
     // prevent watch task from stopping when error happened
     .pipe(plumber())
-    .pipe(less())
+    .pipe(sass())
     .pipe(gulp.dest('src/css'))
     // listening the changes to reload server
     .pipe(connect.reload());
@@ -33,7 +33,7 @@ gulp.task('less', function () {
 
 gulp.task('watch', function () {
   gulp.watch(['src/**/*.html'], ['html']);
-  gulp.watch(['src/less/*.less'], ['less']);
+  gulp.watch(['src/sass/*.scss'], ['sass']);
 });
 
-gulp.task('default', ['less', 'connect', 'watch']);
+gulp.task('default', ['sass', 'connect', 'watch']);
