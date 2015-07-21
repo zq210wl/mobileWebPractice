@@ -1,2 +1,98 @@
+/******* global ********/
+/******* header ********/
+/********* mixin ********/
+/*************** common start *****************/
+@font-face {
+  font-family: 'iconfont';
+  src: url("../asset/iconfont/iconfont.eot");
+  /* IE9*/
+  src: url("../asset/iconfont/iconfont.eot?#iefix") format("embedded-opentype"), url("../asset/iconfont/iconfont.woff") format("woff"), url("../asset/iconfont/iconfont.ttf") format("truetype"), url("../asset/iconfont/iconfont.svg#iconfont") format("svg");
+  /* iOS 4.1- */ }
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale; }
+
+a {
+  text-decoration: none; }
+
+.single-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+a.react {
+  display: block;
+  color: inherit;
+  height: 100%; }
+
+/*************** common end *****************/
+/************* html body start **************/
+html {
+  font-size: 10px;
+  height: 100%;
+  overflow: hidden;
+  min-width: 320px; }
+
 body {
-  font-size: 90px; }
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 1.4rem; }
+
+/************* html body end **************/
+/************* header section start ***********/
+.nav {
+  display: -webkit-flex;
+  display: -ms-flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  height: 5rem;
+  background-color: #06c1ae;
+  color: #fff; }
+
+.nav-left, .nav-search, .nav-right {
+  line-height: 5rem; }
+  .nav-left a, .nav-search a, .nav-right a {
+    padding: 0 1rem; }
+    .nav-left a span, .nav-search a span, .nav-right a span {
+      font-size: 1.6rem; }
+
+.nav-left i {
+  display: inline-block; }
+  .nav-left i:after {
+    content: '';
+    display: inline-block;
+    position: relative;
+    top: -.2rem;
+    width: .5rem;
+    height: .5rem;
+    border-bottom: .2rem solid #fff;
+    border-left: .2rem solid #fff;
+    -webkit-transform: rotateZ(-45deg);
+    -ms-transform: rotateZ(-45deg); }
+
+.nav-search {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  position: relative;
+  -webkit-align-self: center;
+  height: 3.2rem;
+  line-height: 3.2rem;
+  margin: 0;
+  border-radius: .3rem;
+  background-color: rgba(0, 0, 0, 0.15); }
+  .nav-search a i {
+    position: absolute;
+    left: 1rem;
+    font-size: 1.5rem; }
+  .nav-search a span {
+    font-size: 1.3rem;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding-left: 2rem;
+    color: #68dbce; }
+
+/************* header section end ***********/

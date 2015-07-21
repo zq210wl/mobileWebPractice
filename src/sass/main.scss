@@ -1,5 +1,111 @@
-$fontSize: 90px;
+@import 'variables.scss';
+
+/*************** common start *****************/
+@font-face {font-family: 'iconfont';
+  src: url('../asset/iconfont/iconfont.eot'); /* IE9*/
+  src: url('../asset/iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../asset/iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
+  url('../asset/iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('../asset/iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont{
+  font-family: "iconfont" !important;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a{
+  text-decoration: none;
+}
+
+.single-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+a.react {
+  display: block;
+  color: inherit;
+  height: 100%;
+}
+/*************** common end *****************/
+
+/************* html body start **************/
+html{
+  font-size: $html-font-size;
+  height: 100%;
+  overflow: hidden;
+  min-width: 320px;
+}
 
 body{
-  font-size: $fontSize;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 1.4rem;
 }
+/************* html body end **************/
+
+/************* header section start ***********/
+.nav {
+  @include display-flex-row;
+  height: 5rem;
+  background-color: $header-bg-color;
+  color: $head-color;
+}
+.nav-left, .nav-search, .nav-right{
+  line-height: 5rem;
+  a{
+    padding: 0 1rem;
+    span {
+      font-size: 1.6rem;
+    }
+  }
+}
+.nav-left {
+  i{
+    display: inline-block;
+    &:after{
+      content: '';
+      display: inline-block;
+      position: relative;
+      top: -.2rem;
+      width: .5rem;
+      height: .5rem;
+      border-bottom: .2rem solid #fff;
+      border-left: .2rem solid #fff;
+      @include transform-rotateZ(-45);
+    }
+  }
+}
+.nav-search {
+  @include flex-box;
+  position: relative;
+  -webkit-align-self: center;
+  height: 3.2rem;
+  line-height: 3.2rem;
+  margin: 0;
+  border-radius: .3rem;
+  background-color: $search-box-bg-color;
+  a{
+    i{
+      position: absolute;
+      left: 1rem;
+      font-size: 1.5rem;
+    }
+    span {
+      font-size: 1.3rem;
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      padding-left: 2rem;
+      color: $search-color;
+    }
+  }
+}
+/************* header section end ***********/
+
+
+
