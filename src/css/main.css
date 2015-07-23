@@ -32,14 +32,15 @@ a.react {
 /*************** common end *****************/
 /************* html body start **************/
 html {
-  font-size: 10px;
+  font-size: 100px;
+  -webkit-text-size-adjust: none;
   height: 100%;
   overflow: hidden;
   min-width: 320px; }
 
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 1.4rem; }
+  font-size: .14rem; }
 
 /************* html body end **************/
 /************* header section start ***********/
@@ -48,16 +49,16 @@ body {
   display: -ms-flex;
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
-  height: 5rem;
+  height: .5rem;
   background-color: #06c1ae;
   color: #fff; }
 
 .nav-left, .nav-search, .nav-right {
-  line-height: 5rem; }
+  line-height: .5rem; }
   .nav-left a, .nav-search a, .nav-right a {
-    padding: 0 1rem; }
+    padding: 0 0.1rem; }
     .nav-left a span, .nav-search a span, .nav-right a span {
-      font-size: 1.6rem; }
+      font-size: .16rem; }
 
 .nav-left i {
   display: inline-block; }
@@ -65,11 +66,11 @@ body {
     content: '';
     display: inline-block;
     position: relative;
-    top: -.2rem;
-    width: .5rem;
-    height: .5rem;
-    border-bottom: .2rem solid #fff;
-    border-left: .2rem solid #fff;
+    top: -.02rem;
+    width: .05rem;
+    height: .05rem;
+    border-bottom: .02rem solid #fff;
+    border-left: .02rem solid #fff;
     -webkit-transform: rotateZ(-45deg);
     -ms-transform: rotateZ(-45deg); }
 
@@ -78,21 +79,21 @@ body {
   -ms-flex: 1;
   position: relative;
   -webkit-align-self: center;
-  height: 3.2rem;
-  line-height: 3.2rem;
+  height: .32rem;
+  line-height: .32rem;
   margin: 0;
-  border-radius: .3rem;
+  border-radius: .03rem;
   background-color: rgba(0, 0, 0, 0.15); }
   .nav-search a i {
     position: absolute;
-    left: 1rem;
-    font-size: 1.5rem; }
+    left: .1rem;
+    font-size: .15rem; }
   .nav-search a span {
-    font-size: 1.3rem;
+    font-size: .13rem;
     box-sizing: border-box;
     display: block;
     width: 100%;
-    padding-left: 2rem;
+    padding-left: .2rem;
     color: #68dbce; }
 
 /************* header section end ***********/
