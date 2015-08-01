@@ -7,20 +7,42 @@ $search-box-bg-color:       rgba(0,0,0,.15) !default;
 $head-color:                #fff !default;
 $search-color:              rgb(104, 219, 206) !default;
 
+/******* navigation section ********/
+$nav-wrapper-height:        1.6rem;
+
+
 /********* mixin ********/
+//水平方向排列，不换行
 @mixin display-flex-row {
   display: -webkit-flex;
-  display: -ms-flex;
+  display: -webkit-box;
   -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
 }
-
+//水平方向排列，超出换行显示
+@mixin display-flex-row-wrap {
+  display: -webkit-flex;
+  display: -webkit-box;
+  -webkit-flex-flow: row wrap;
+  -webkit-align-content: space-between;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+}
+//设置弹性盒子中item的比例
 @mixin flex-box {
   -webkit-flex: 1;
-  -ms-flex: 1;
+  -webkit-flex-box: 1;
 }
-
+//旋转
 @mixin transform-rotateZ($angle:0) {
   -webkit-transform: rotateZ(#{$angle}deg);
-  -ms-transform: rotateZ(#{$angle}deg);
+}
+//渐变
+@mixin transition($time:0) {
+  -webkit-transition: -webkit-transform $time;
+}
+//渐变
+@mixin translateX($val:0) {
+  -webkit-transform: translateX($val);
 }

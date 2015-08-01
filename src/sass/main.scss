@@ -32,22 +32,33 @@ a.react {
   color: inherit;
   height: 100%;
 }
+
+.list {
+  position: relative;
+  border-top: 1px solid #DDD8CE;
+  border-bottom: 1px solid #DDD8CE;
+  margin-top: .1rem;
+  margin-bottom: 0;
+  background-color: #fff;  
+  &.list-in{
+    border-top: none;
+    margin: 0;
+  }
+}
 /*************** common end *****************/
 
 /************* html body start **************/
-html{
+html, body{
   font-size: $html-font-size;
   -webkit-text-size-adjust:none;
   height: 100%;
-  overflow: hidden;
-  min-width: 320px;
+  overflow-x: hidden;
 }
 
 body{
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: .14rem;
 }
-/************* html body end **************/
 
 /************* header section start ***********/
 .nav {
@@ -106,7 +117,77 @@ body{
     }
   }
 }
-/************* header section end ***********/
 
+/************* banner section start ***********/
+.banner {
+  height: .5rem;
+  text-align: center;
+  img {
+    width: 3.2rem;
+  }
+}
 
-
+/************* navigation section start ***********/
+.icon-wrapper {
+  height: $nav-wrapper-height + 0.3rem;
+}
+.list_icons {
+  height: $nav-wrapper-height;
+  list-style-type: none;
+  @include display-flex-row-wrap;
+  margin: 0;
+  padding: 0;
+  &.page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    @include transition(.2s);
+    &.current {
+      z-index: 2;
+    }
+    &.pre {
+      @include translateX(-105%);
+    }
+    &.next {
+      @include translateX(105%);
+    }
+  }
+}
+.list_icons_item {
+  display: inline-block;
+  width: 25%;
+  box-sizing: border-box;
+  text-align: center;
+  a {
+    padding: .1rem;
+  }
+}
+.list_icons_item_circle{
+  font-size: .4rem;
+  color: #FF8822;
+  width: .4rem;
+  height: .4rem;
+  display: block;
+  margin: 0 auto 0.1rem;
+}
+.list_switch {
+  position: absolute;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  bottom: .08rem;
+  text-align: center;
+  width: 100%; 
+  li {
+    display: inline-block;
+    width: .08rem;
+    height: .08rem;
+    border-radius: 50%;
+    background-color: #F0EFED;
+    margin: 0 0.065rem;
+    &.active {
+      background-color: #06c1ae;
+    }
+  } 
+}
