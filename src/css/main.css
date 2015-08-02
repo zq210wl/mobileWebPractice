@@ -2,6 +2,7 @@
 /******* global ********/
 /******* header ********/
 /******* navigation section ********/
+/******* daogou section ********/
 /********* mixin ********/
 /*************** common start *****************/
 @font-face {
@@ -21,15 +22,37 @@
 a {
   text-decoration: none; }
 
-.single-line {
+img {
+  vertical-align: middle;
+  border: 0; }
+
+dl, dt, dd {
+  padding: 0;
+  margin: 0; }
+
+.single_line {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
 
+.text_block {
+  line-height: 1.41;
+  text-align: justify; }
+
 a.react {
   display: block;
   color: inherit;
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
+
+.vertical_horizontal_center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
 
 .list {
   position: relative;
@@ -46,13 +69,22 @@ a.react {
 /************* html body start **************/
 html, body {
   font-size: 100px;
-  -webkit-text-size-adjust: none;
-  height: 100%;
+  width: 100%;
   overflow-x: hidden; }
 
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: .14rem; }
+  font-size: .14rem;
+  background-color: #f0efed;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Likely future */ }
 
 /************* header section start ***********/
 .nav {
@@ -164,6 +196,8 @@ body {
   text-align: center; }
   .list_icons_item a {
     padding: .1rem; }
+    .list_icons_item a .list_icon_desc {
+      color: #666; }
 
 .list_icons_item_circle {
   font-size: .4rem;
@@ -190,3 +224,372 @@ body {
     margin: 0 0.065rem; }
     .list_switch li.active {
       background-color: #06c1ae; }
+
+/************* 上门服务 section start *********/
+.service {
+  height: .68rem; }
+  .service a {
+    padding-left: .75rem; }
+
+.service_icon {
+  position: absolute;
+  left: .2rem;
+  top: .13rem;
+  width: .4rem;
+  height: .4rem;
+  background: url(../asset/img/icon-sm.png) no-repeat center;
+  background-size: 100%; }
+
+.service_title {
+  display: block;
+  font-size: .14rem;
+  color: #333;
+  margin-top: .14rem; }
+
+.service_detail {
+  display: block;
+  font-size: .12rem;
+  color: #999;
+  margin-top: .09rem; }
+
+/************* daogou section start *********/
+.daogou {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-box-pack: center;
+  /* 子元素水平居中对齐 */
+  -moz-box-pack: center;
+  -webkit-box-align: center;
+  /* 子元素垂直居中对齐 */
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  padding: .06rem;
+  text-align: center; }
+
+.daogou_left {
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 1;
+  /* Chrome */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  height: 1.48rem;
+  border-right: 1px solid #ddd8ce; }
+
+.daogou_left_info {
+  display: inline-block;
+  text-align: left; }
+  .daogou_left_info strong {
+    display: block;
+    font-size: .15rem;
+    color: #55a40f;
+    margin-top: .15rem;
+    margin-bottom: .125rem; }
+  .daogou_left_info small {
+    display: block;
+    color: #666; }
+
+.daogou_left_imgbox {
+  position: relative;
+  display: block;
+  width: .88rem;
+  height: .88rem;
+  margin: auto; }
+  .daogou_left_imgbox img {
+    height: 100%; }
+
+.daogou_right {
+  -webkit-box-flex: 2;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 2;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 2;
+  /* Chrome */
+  -ms-flex: 2;
+  /* IE 10 */
+  flex: 2;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  height: 1.48rem; }
+
+.daogou_right_top {
+  display: block;
+  height: 0.73rem;
+  border-bottom: 1px solid #ddd8ce; }
+
+.daogou_right_top_info {
+  display: inline-block;
+  width: .85rem;
+  text-align: left;
+  vertical-align: top; }
+  .daogou_right_top_info strong {
+    display: block;
+    font-size: .15rem;
+    color: #ff3f0d;
+    margin-top: .15rem;
+    margin-bottom: .125rem; }
+  .daogou_right_top_info small {
+    display: block;
+    color: #666; }
+
+.daogou_right_top_imgbox {
+  position: relative;
+  display: inline-block;
+  width: .65rem;
+  height: .65rem;
+  vertical-align: top; }
+  .daogou_right_top_imgbox img {
+    height: 100%; }
+
+.daogou_right_bottom {
+  display: block;
+  height: 0.74rem;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-box-pack: center;
+  /* 子元素水平居中对齐 */
+  -moz-box-pack: center;
+  -webkit-box-align: center;
+  /* 子元素垂直居中对齐 */
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center; }
+
+.daogou_right_bottom_left {
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 1;
+  /* Chrome */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  border-right: 1px solid #ddd8ce; }
+
+.daogou_right_bottom_left_info {
+  display: inline-block;
+  width: .85rem;
+  text-align: left;
+  vertical-align: top; }
+  .daogou_right_bottom_left_info strong {
+    display: block;
+    font-size: .15rem;
+    color: #f742a0;
+    margin-top: .05rem;
+    margin-bottom: .05rem; }
+  .daogou_right_bottom_left_info small {
+    display: block;
+    color: #666; }
+
+.daogou_right_bottom_left_imgbox {
+  position: relative;
+  display: block;
+  height: .4rem; }
+  .daogou_right_bottom_left_imgbox img {
+    height: 100%; }
+
+.daogou_right_bottom_right {
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 1;
+  /* Chrome */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */ }
+
+.daogou_right_bottom_right_info {
+  display: inline-block;
+  width: 1rem;
+  text-align: center;
+  vertical-align: top; }
+  .daogou_right_bottom_right_info strong {
+    display: block;
+    font-size: .15rem;
+    color: #ff8601;
+    margin-top: .05rem;
+    margin-bottom: .05rem; }
+  .daogou_right_bottom_right_info small {
+    display: block;
+    color: #666; }
+  .daogou_right_bottom_right_info .time_panel {
+    display: inline-block;
+    margin-top: .1rem; }
+  .daogou_right_bottom_right_info .span_time {
+    display: inline-block;
+    background-color: #4C4C4C;
+    width: .2rem;
+    height: .15rem;
+    border-radius: .03rem;
+    text-align: center;
+    line-height: .15rem;
+    font-size: .12rem;
+    color: #fff; }
+
+/************* huodong section start *********/
+.huodong > .huodong_wrapper, .huodong_line {
+  border-bottom: 1px solid #ddd8ce; }
+
+.huodong_wrapper a, .huodong_line {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-box-pack: center;
+  /* 子元素水平居中对齐 */
+  -moz-box-pack: center;
+  -webkit-box-align: center;
+  /* 子元素垂直居中对齐 */
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center; }
+
+.huodong_wrapper {
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 1;
+  /* Chrome */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */ }
+  .huodong_wrapper + .huodong_wrapper {
+    border-left: 1px solid #ddd8ce; }
+  .huodong_wrapper a .info {
+    -webkit-box-flex: 1;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1;
+    /* OLD - Firefox 19- */
+    -webkit-flex: 1;
+    /* Chrome */
+    -ms-flex: 1;
+    /* IE 10 */
+    flex: 1;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    margin-left: .12rem; }
+    .huodong_wrapper a .info strong {
+      display: block; }
+    .huodong_wrapper a .info small {
+      display: block; }
+  .huodong_wrapper a .imgbox {
+    display: block;
+    position: relative; }
+    .huodong_wrapper a .imgbox img {
+      height: 100%; }
+  .huodong_wrapper.topic_big strong {
+    color: #ff7f60;
+    font-size: .20rem; }
+  .huodong_wrapper.topic_big small {
+    color: #999999; }
+  .huodong_wrapper.topic_big .imgbox {
+    width: 1.705rem;
+    height: .65rem; }
+  .huodong_wrapper.topic_0 strong {
+    color: #ff7f60;
+    font-size: .16rem; }
+  .huodong_wrapper.topic_0 small {
+    color: #999999; }
+  .huodong_wrapper.topic_0 .imgbox {
+    width: .65rem;
+    height: .65rem; }
+
+/************* youlike section start *********/
+.youlike dt, .youlike dd {
+  padding: 0.14rem 0.1rem; }
+
+.youlike dd {
+  border-top: 1px solid #ddd8ce; }
+  .youlike dd .item {
+    position: relative; }
+    .youlike dd .item .imgbox {
+      position: absolute;
+      width: .9rem;
+      height: .82rem;
+      overflow: hidden; }
+      .youlike dd .item .imgbox img {
+        height: 100%; }
+    .youlike dd .item .item_right {
+      height: .82rem;
+      margin-left: 1rem; }
+      .youlike dd .item .item_right .item_brand {
+        padding-top: .05rem;
+        padding-bottom: .06rem;
+        font-size: .15rem;
+        font-weight: 400;
+        color: #333; }
+      .youlike dd .item .item_right .item_title {
+        color: #666;
+        overflow: hidden;
+        font-size: .12rem;
+        height: .34rem; }
+      .youlike dd .item .item_right .item_price {
+        position: relative; }
+        .youlike dd .item .item_right .item_price .strong {
+          font-size: .19rem;
+          color: #06c1ae; }
+        .youlike dd .item .item_right .item_price .strong_color {
+          font-size: .13rem;
+          color: #06c1ae; }
+        .youlike dd .item .item_right .item_price del {
+          font-size: .12rem; }
+        .youlike dd .item .item_right .item_price .line_right {
+          position: absolute;
+          right: 0;
+          color: #666; }
+  .youlike dd.see_all {
+    border-bottom: 1px solid #ddd8ce;
+    height: .4rem;
+    line-height: .4rem;
+    font-size: .15rem;
+    padding-top: 0;
+    padding-bottom: 0; }
+    .youlike dd.see_all div {
+      position: relative; }
+      .youlike dd.see_all div:after {
+        position: absolute;
+        right: .025rem;
+        top: 50%;
+        display: block;
+        content: '';
+        width: .3em;
+        height: .3em;
+        border-left: .02rem solid #06c1ae;
+        border-bottom: .02rem solid #06c1ae;
+        -webkit-transform: translateY(-26%) scaleY(1.2) rotateZ(-135deg);
+        -moz-transform: translateY(-50%) scaleY(1.2) rotateZ(-135deg);
+        -ms-transform: translateY(-50%) scaleY(1.2) rotateZ(-135deg); }

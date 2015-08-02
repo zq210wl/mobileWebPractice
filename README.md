@@ -25,9 +25,9 @@
     * 用 height:100%
   - 可以去试着点击美团的header中的 a 元素，就会发现每个a元素可点区域都是一个大的区域块
 
-* 巧用 box-sizing: border-box;
+* 巧用 box-sizing: border-box 解决盒子边框溢出
   - 改变元素的默认盒子模型, 让 padding 和 border 的值包含在 width 和 height 中
-  - 好处：避免设置了 padding-left 值之后，没法再用 width: 100%
+  - 好处：避免设置了 padding-left,border 等值之后，没法再用 width: 100%
   - 美团的 header 中的搜索框就用了此属性
 
 * 巧用弹性盒子布局(display: flex, display: box)
@@ -44,6 +44,27 @@
   - 例如：用 width:25% 实现四个inline-block图标等宽布局的时候，四个元素之间不能有回车,不然最后一个图标老是会换行显示
   - 当时我就是用了回车，最后一个元素老是换行，我纠结了好久才解决了
 
+* 实现左右两列布局：一边是图片，一边是信息描述
+  - 通常是把图片绝对定位，描述信息元素设置 block,并用 margin 来跟图片分开距离
+
+* 禁用鼠标选取
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Likely future */ 
+
+* 去除 a 标签选中时出现边框
+  -webkit-tap-highlight-color: transparent;
+
+* 图片的自动缩放
+  - 针对 img 标签：设置 height: 100%;
+  - 针对 background: 设置 background-size: 100%;
+
+* background 和 img 的正确使用
+  - 需要动态加载的图片用 img 来写
+  - 不经常变化的图片用 background 来写
+  
+
 # 性能优化
 * 将一些不是经常变化的icon图标用字体图标来替代
   - 可以通过[阿里巴巴矢量图标](http://iconfont.cn/)来制作 iconfont
@@ -51,4 +72,24 @@
 
 * 使用专门针对浏览器的__webp格式__图片，文件大小会更小一些
 
+# 调试
+* 本地调试
+  - 可以用 chrome 自带的手机设备模拟器来调试
+* 远程调试
+  - 使用 Weinre 进行远程调试, 下面是 Weinre 的安装和使用方法
+    * [远程调试之 Weinre 的使用](https://developer.mozilla.org/en-US/Firefox_OS/Platform/Gaia/Weinre_As_Remote_Debugger)
+
 # 用到的CSS3属性
+  * 待写...
+
+# 用到的HTML5标签
+* 布局相关
+  - header
+  - nav
+  - footer
+  - article
+  - section
+* 文字相关
+  - strong
+  - small
+  - i

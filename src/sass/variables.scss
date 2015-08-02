@@ -10,6 +10,10 @@ $search-color:              rgb(104, 219, 206) !default;
 /******* navigation section ********/
 $nav-wrapper-height:        1.6rem;
 
+/******* daogou section ********/
+$daogou-height:             1.48rem;
+$daogou-border:             #ddd8ce;
+
 
 /********* mixin ********/
 //弹性盒子，水平方向排列，不换行
@@ -28,12 +32,12 @@ $nav-wrapper-height:        1.6rem;
   align-items: center;
 }
 //设置弹性盒子中item的比例
-@mixin flex-box {
-  -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
-  -moz-box-flex: 1; /* OLD - Firefox 19- */
-  -webkit-flex: 1; /* Chrome */
-  -ms-flex: 1; /* IE 10 */
-  flex: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+@mixin flex-box($val:1) {
+  -webkit-box-flex: $val; /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: $val; /* OLD - Firefox 19- */
+  -webkit-flex: $val; /* Chrome */
+  -ms-flex: $val; /* IE 10 */
+  flex: $val; /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 //旋转
 @mixin transform-rotateZ($angle:0) {
