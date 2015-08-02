@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /******* global ********/
 /******* header ********/
 /******* navigation section ********/
@@ -55,11 +56,25 @@ body {
 
 /************* header section start ***********/
 .nav {
-  display: -webkit-flex;
   display: -webkit-box;
-  -webkit-flex-flow: row nowrap;
-  -webkit-box-align: center;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
   -webkit-box-pack: center;
+  /* 子元素水平居中对齐 */
+  -moz-box-pack: center;
+  -webkit-box-align: center;
+  /* 子元素垂直居中对齐 */
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
   height: .5rem;
   background-color: #06c1ae;
   color: #fff; }
@@ -85,10 +100,17 @@ body {
     -webkit-transform: rotateZ(-45deg); }
 
 .nav-search {
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;
+  /* OLD - Firefox 19- */
   -webkit-flex: 1;
-  -webkit-flex-box: 1;
+  /* Chrome */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
   position: relative;
-  -webkit-align-self: center;
   height: .32rem;
   line-height: .32rem;
   margin: 0;
@@ -120,12 +142,6 @@ body {
 .list_icons {
   height: 1.6rem;
   list-style-type: none;
-  display: -webkit-flex;
-  display: -webkit-box;
-  -webkit-flex-flow: row wrap;
-  -webkit-align-content: space-between;
-  -webkit-box-align: center;
-  -webkit-box-pack: center;
   margin: 0;
   padding: 0; }
   .list_icons.page {

@@ -62,7 +62,7 @@ body{
 
 /************* header section start ***********/
 .nav {
-  @include display-flex-row;
+  @include display-flex;
   height: .5rem;
   background-color: $header-bg-color;
   color: $head-color;
@@ -95,7 +95,6 @@ body{
 .nav-search {
   @include flex-box;
   position: relative;
-  -webkit-align-self: center;
   height: .32rem;
   line-height: .32rem;
   margin: 0;
@@ -134,7 +133,6 @@ body{
 .list_icons {
   height: $nav-wrapper-height;
   list-style-type: none;
-  @include display-flex-row-wrap;
   margin: 0;
   padding: 0;
   &.page {
