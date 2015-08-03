@@ -5,6 +5,7 @@
 
 # Wait to do
 * 构建SASS的 source map 文件
+* JS功能的添加
 
 # 技巧总结
 * 用 rem 替代 px
@@ -14,7 +15,7 @@
     * 又有人要说了，可以设置 -webkit-text-size-adjust:none 来禁用浏览器文字大小调整的功能
       - But, 在新版的Chrome中已经禁止了改属性, so, 设置 -webkit-text-size-adjust:none 也没用了
     * 美团用的就是100px
-    
+
 * 所有可点击的元素要放在 a 标签中
   - 好处：可以在元素点击的时候出现点击效果
 
@@ -38,7 +39,7 @@
   - 下面是一篇弹性盒子兼容性的写法的文章介绍
     * [使用Flexbox：新旧语法混用实现最佳浏览器兼容](http://www.w3cplus.com/css3/using-flexbox.html)
 
-* 多个inline-block元素间会出现多余的空白 
+* 多个inline-block元素间会出现多余的空白
   - 原因：空白是inline-block元素间的回车字符造成的
   - 解决：设置父级元素的font-size:0(或不要有回车,或父级使用弹性盒子)
   - 例如：用 width:25% 实现四个inline-block图标等宽布局的时候，四个元素之间不能有回车,不然最后一个图标老是会换行显示
@@ -48,13 +49,13 @@
   - 通常是把图片绝对定位，描述信息元素设置 block,并用 margin 来跟图片分开距离
 
 * 禁用鼠标选取
-  -webkit-user-select: none; /* Chrome all / Safari all */
-  -moz-user-select: none; /* Firefox all */
-  -ms-user-select: none; /* IE 10+ */
-  user-select: none; /* Likely future */ 
+  - -webkit-user-select: none; /* Chrome all / Safari all */
+  - -moz-user-select: none; /* Firefox all */
+  - -ms-user-select: none; /* IE 10+ */
+  - user-select: none; /* Likely future */
 
 * 去除 a 标签选中时出现边框
-  -webkit-tap-highlight-color: transparent;
+  - -webkit-tap-highlight-color: transparent;
 
 * 图片的自动缩放
   - 针对 img 标签：设置 height: 100%;
@@ -63,12 +64,12 @@
 * background 和 img 的正确使用
   - 需要动态加载的图片用 img 来写
   - 不经常变化的图片用 background 来写
-  
+
 
 # 性能优化
 * 将一些不是经常变化的icon图标用字体图标来替代
   - 可以通过[阿里巴巴矢量图标](http://iconfont.cn/)来制作 iconfont
-  - 可以看看美团的一些 icon 有在用 
+  - 可以看看美团的一些 icon 有在用
 
 * 使用专门针对浏览器的__webp格式__图片，文件大小会更小一些
 
@@ -80,7 +81,7 @@
     * [远程调试之 Weinre 的使用](https://developer.mozilla.org/en-US/Firefox_OS/Platform/Gaia/Weinre_As_Remote_Debugger)
 
 # 用到的CSS3属性
-  * 待写...
+  * 未完待写...
 
 # 用到的HTML5标签
 * 布局相关
@@ -93,3 +94,7 @@
   - strong
   - small
   - i
+  - del
+* 列表相关
+  - dl, dt, dd
+* 未完待写...
