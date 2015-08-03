@@ -1,11 +1,15 @@
 # mobileWebPractice
 通过对牛逼的[美团网](http://i.meituan.com/)的页面模仿制作，来提高并总结一下自己对移动web开发的认知。
 
+# 完成度
+* 目前首页的H5静态页面基本已经完成
 未完待续...
 
-# Wait to do
-* 构建SASS的 source map 文件
+# 还未做功能
 * JS功能的添加
+* 构建SASS的 source map 文件
+* 需要部署到生产环境的相关代码压缩等等的自动化构建任务
+* ...
 
 # 技巧总结
 * 用 rem 替代 px
@@ -65,6 +69,8 @@
   - 需要动态加载的图片用 img 来写
   - 不经常变化的图片用 background 来写
 
+* 未完待写...
+
 
 # 性能优化
 * 将一些不是经常变化的icon图标用字体图标来替代
@@ -72,6 +78,8 @@
   - 可以看看美团的一些 icon 有在用
 
 * 使用专门针对浏览器的__webp格式__图片，文件大小会更小一些
+
+* 未完待写...
 
 # 调试
 * 本地调试
@@ -81,7 +89,14 @@
     * [远程调试之 Weinre 的使用](https://developer.mozilla.org/en-US/Firefox_OS/Platform/Gaia/Weinre_As_Remote_Debugger)
 
 # 用到的CSS3属性
-  * 未完待写...
+* border-radius
+* background-size
+* box-sizing: border-box;
+* transform
+  - translate
+  - rotate
+  - scale
+* 未完待写...
 
 # 用到的HTML5标签
 * 布局相关
