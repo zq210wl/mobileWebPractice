@@ -11,6 +11,13 @@
 * 需要部署到生产环境的相关代码压缩等等的自动化构建任务
 * ...
 
+# 怎么运行此项目(需要先安装node和gulp)
+1. 下载此项目到本地
+2. 在项目根目录下运行 `npm install`
+3. 进入到node_modules/bower/.bin目录,然后执行 `bower install`
+4. 回到项目根目录，然后执行 `gulp buildZepto`
+5. 最后执行 `gulp` 就可以启动server
+
 # 技巧总结
 * 用 rem 替代 px
   - 给 html 设置一个固定的px宽度值，例如10px,100px, 然后用rem来做单位

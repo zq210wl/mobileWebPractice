@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     htmlmin = require('gulp-htmlmin'),
     imagemin = require('gulp-imagemin'),
     sass = require('gulp-sass'),
+    shell = require('gulp-shell'),
     minifyCss = require('gulp-minify-css'),
     connect = require('gulp-connect'),
     plumber = require('gulp-plumber');
@@ -30,6 +31,13 @@ gulp.task('sass', function () {
     // listening the changes to reload server
     .pipe(connect.reload());
 });
+
+// custom build zeptojs
+gulp.task('buildZepto', shell.task([
+  'npm install',
+  'set MODULES=zepto event ajax form data deferred callbacks touch',
+  'npm run-script dist'
+], {cwd: "src/lib/zeptojs"}));
 
 gulp.task('watch', function () {
   gulp.watch(['src/**/*.html'], ['html']);
